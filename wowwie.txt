@@ -1,0 +1,19 @@
+//get udid 
+system_profiler SPUSBDataType | grep -A 11 "iPhone"
+
+//set up tailscale
+
+//set up tunnel
+xcrun devicectl device tunnel start --device <YOUR_UDID> --hostname <YOUR_IP>
+
+//inject location
+xcrun devicectl device simulate location start --device <YOUR_UDID> --gpx ~/Desktop/location.gpx
+
+//undo
+xcrun devicectl device simulate location stop --device <YOUR_UDID>
+
+//TURN OFF DRIVE DETECTION BUT TURN BACK ON WHEN BACK
+//TURN OFF MOTION AND FITNESS
+//TURN OFF BACKGROUND APP REFRESH
+//TURN OFF MOBILE DATA
+//TURN OFF BLUETOOTH (?)
